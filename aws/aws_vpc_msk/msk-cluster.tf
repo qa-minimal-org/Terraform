@@ -11,7 +11,7 @@ delete.topic.enable = true
 PROPERTIES
 }
 
-resource "aws_msk_cluster" "msk_cluster" {
+/*resource "aws_msk_cluster" "msk_cluster" {
   count                  = length(var.private_subnet_cidrs)
   cluster_name           = "msk-${lower(var.environment)}-cluster-${random_uuid.randuuid.result}"
   kafka_version          = var.msk_cluster_version
@@ -63,7 +63,7 @@ configuration_info {
       "Name", "msk-${lower(var.environment)}-cluster"
     )
   )
-}
+}*/
 
 output "zookeeper_connect_string" {
   value = aws_msk_cluster.msk_cluster.*.zookeeper_connect_string
