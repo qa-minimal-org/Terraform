@@ -28,13 +28,13 @@ PROPERTIES
     security_groups = [aws_security_group.KafkaClusterSG.id]
   }
 
-  /*
+  
   client_authentication {
     tls {
       certificate_authority_arns = [aws_acmpca_certificate_authority.pca.arn]
     }
   }
-*/
+
 
 configuration_info {
   arn = aws_msk_configuration.msk_cluster_config.arn
