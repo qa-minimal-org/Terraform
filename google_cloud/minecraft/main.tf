@@ -127,7 +127,7 @@ resource "google_compute_network" "minecraft" {
 }
 
 # Open the firewall for Minecraft traffic
-resource "google_compute_firewall" "minecraft" {
+/* resource "google_compute_firewall" "minecraft" {
   name    = "minecraft"
   network = google_compute_network.minecraft.name
   # Minecraft client port
@@ -146,7 +146,7 @@ resource "google_compute_firewall" "minecraft" {
   }
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["minecraft"]
-}
+} */
 
 resource "google_project_iam_custom_role" "minecraftSwitcher" {
   role_id     = "MinecraftSwitcher"
